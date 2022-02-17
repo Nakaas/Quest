@@ -1,0 +1,44 @@
+public class Questao4aux {
+	private String estado;
+	private String abreviacao;
+	private double valor;
+	private double porcentagem;
+	
+	public String getPorcentagem() {
+		porcentagem = (this.valor*100)/total;
+		String result = String.format("%.2f", porcentagem);
+		return result;
+	}
+	public void setPorcentagem(double porcentagem) {
+		this.porcentagem = porcentagem;
+	}
+	private static double total;
+	
+	
+	public String getEstado() {
+		return estado;
+	}
+	public void setEstado(String estado) {
+		this.estado = estado;
+	}
+	public String getAbreviacao() {
+		return abreviacao;
+	}
+	public void setAbreviacao(String abreviacao) {
+		this.abreviacao = abreviacao;
+	}
+	public double getValor() {
+		return valor;
+	}
+	public void setValor(double valor) {
+		this.valor = valor;
+		total += valor;
+	}
+	public static double getTotal() {
+		return total;
+	}
+	public static void setTotal(double total) {
+		Questao4aux.total = total;
+	}
+
+}
