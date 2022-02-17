@@ -1,0 +1,15 @@
+import java.util.Scanner;
+
+public class Questao5 {
+	public static void main(String[] args) {
+		String palavra;
+		Scanner in = new Scanner(System.in);
+		System.out.println("Escreva uma Palavra, ou Frase! Nós Iremos Invertê-la.");
+		palavra = in.nextLine();
+		
+		for (int i = palavra.length(); i != 0; i--) {
+			System.out.print(palavra.charAt(i-1));
+		}
+		in.close();
+	}
+}
