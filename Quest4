@@ -1,0 +1,37 @@
+public class Questao4 {
+	public static void main (String[] args) {
+		Questao4aux sp = new Questao4aux();
+		sp.setAbreviacao("SP");
+		sp.setEstado("São Paulo");
+		sp.setValor(67836.43);
+		
+		Questao4aux rj = new Questao4aux();
+		rj.setAbreviacao("RJ");
+		rj.setEstado("Rio de Janeiro");
+		rj.setValor(36678.66);
+		
+		Questao4aux mg = new Questao4aux();
+		mg.setAbreviacao("MG");
+		mg.setEstado("Minas Gerais");
+		mg.setValor(29229.88);
+		
+		Questao4aux es = new Questao4aux();
+		es.setAbreviacao("ES");
+		es.setEstado("Espírito Santo");
+		es.setValor(27165.48);
+		
+		Questao4aux out = new Questao4aux();
+		out.setAbreviacao("OUT");
+		out.setEstado("Outros");
+		out.setValor(19849.53);
+		
+		System.out.println("Olá! Está é nossa base de dados atual: \n\n"
+				+ sp.getEstado()+"\t–\tR$" +sp.getValor()+"\t–\t"+sp.getPorcentagem()+"%\r\n"
+				+ rj.getEstado()+"\t–\tR$" +rj.getValor()+"\t–\t"+rj.getPorcentagem()+"%\r\n"
+				+ mg.getEstado()+"\t–\tR$" +mg.getValor()+"\t–\t"+mg.getPorcentagem()+"%\r\n"
+				+ es.getEstado()+"\t–\tR$" +es.getValor()+"\t–\t"+es.getPorcentagem()+"%\r\n"
+				+ out.getEstado()+"\t\t–\tR$" +out.getValor()+"\t–\t"+out.getPorcentagem()+"%\r\n"
+				+ "Total\t\t–\tR$"+Questao4aux.getTotal()+"\t–\t 100%");
+		
+	}
+}
