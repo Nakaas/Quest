@@ -1,0 +1,27 @@
+
+public class Questao2 {
+	public static void main(String[] args) {
+		int num;
+		Scanner in = new Scanner(System.in);
+		System.out.println("Olá!! Informe um Número. Nós Iremos Procurá-lo na Sequencia de Fibonacci.");
+		num = in.nextInt();
+
+		for (int i = 1; i <= 30; i++) {
+			if (num == Fibonacci.fibo(i)) {
+				System.out
+						.println("Este número pertence a sequencia de Fibonacci! Sendo o número anterior da sequencia "
+								+ Fibonacci.fibo(i - 1) + " e o próximo " + Fibonacci.fibo(i + 1) + ".");
+				return;
+			}
+			if (num < Fibonacci.fibo(i + 1) && num > Fibonacci.fibo(i)) {
+				System.out.println(
+						"Este número não pertence a sequencia de Fibonacci! Mas ele está entre " + Fibonacci.fibo(i)
+								+ " e " + Fibonacci.fibo(i + 1) + " que são números da sequencia de Fibonacci!");
+
+				return;
+			}
+			in.close();
+		}
+	}
+
+}
