@@ -1,0 +1,90 @@
+import java.util.LinkedList;
+import java.util.Scanner;
+
+public class BancoGroup {
+	public static void main(String[] args) {
+		LinkedList<Funcionario> funcionarios = new LinkedList<Funcionario>();
+		Scanner ler = new Scanner(System.in);
+		boolean i = true;
+		System.out.println(
+				"Este programa tem a função de organizar e ajudar na verificação dos funcionários que trabalham em sua empresa.");
+
+		while (i) {
+			System.out.println("");
+			System.out.println("Existem as seguintes possibilidades:");
+			System.out.println("(0 = Adicionar Novo Funcionário, 1 = Remover Funcionário, 2 = Buscar Funcionário, 3 = Exibir Funcionários, 4 = Sair do Programa)");
+			int x = ler.nextInt();
+			String y = ler.nextLine();
+
+			switch (x) {
+			case 0:
+				
+				Funcionario funcionario = new Funcionario();
+				System.out.println("Digite o nome do novo funcionário.");
+				y = ler.nextLine();
+				funcionario.setNome(y);
+				System.out.println("Digite o CPF do novo funcionário.");
+				y = ler.nextLine();
+				funcionario.setCpf(y);
+				System.out.println("Digite o salário do novo funcionário.");
+				double z = ler.nextDouble();
+				funcionario.setSalario(z);
+				funcionarios.add(funcionario);
+				break;
+			case 1:
+				
+				System.out.println("Digite o Número de Funcionário, do funcionário que deseja remover.");
+				x = ler.nextInt();
+				funcionario = funcionarios.get(x);
+
+				System.out.println("Deseja Realmente Remover Este Funcionário? ");
+				funcionario.getInfos();
+				System.out.println("(0 = Sim / 1 = Não)");
+				int l = ler.nextInt();
+				y = ler.nextLine();
+
+				if (l == 1) {
+					return;
+				} else {
+					System.out.println("Funcionário Removido.");
+					funcionarios.remove(x);
+				}
+				break;
+			case 2:
+
+				System.out.println("Qual o Número de Funcionário, do funcionário desejado?");
+				x = ler.nextInt();
+				if (funcionarios.size() > x && x >= 0) {
+					funcionario = funcionarios.get(x);
+					System.out.println("Funcionário Encontrado.");
+					funcionario.getInfos();
+				} else {
+					System.out.println("Funcionário " + x + " não encontrado.");
+				}
+				break;
+			case 3:
+				
+				System.out.println("=========================");
+				for (int k = 0; funcionarios.size() > k; k++) {
+					funcionario = funcionarios.get(k);
+					funcionario.getInfos();
+					System.out.println("Número de Funcionário: " + k + ".");
+					System.out.println("");
+					System.out.println("=========================");
+				}
+
+				break;
+			case 4:
+				
+				i = false;
+				break;
+			default:
+				
+				System.out.println("Este não é um número válido.");
+				y = ler.nextLine();
+				break;
+			}
+		}
+		ler.close();
+	}
+}
